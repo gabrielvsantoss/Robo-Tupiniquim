@@ -11,5 +11,8 @@
 - **Alteração de Altura e Comprimento:** Consegue identificar a altura e o comprimento e altera-los conforme os movimentos que o robo realizou.
 - **Alteração de direção mirada**: Consegue alterar a direção em que o robo esta olhando conforme as direções que o usuario digitar (Direita, Esquerda).
 - **Interação com o Usuario**: Permite que o usuario escolha o tamanho do Grid, a posição inicial do robo e os movimentos que o robo irá realizar.
+- **Percepção de tamanho do Grid**: Idendifica se os movimentos digitados deixam o robo dentro do GRID proposto pelo proprio usuario.
 
+
+## Como usar?
 

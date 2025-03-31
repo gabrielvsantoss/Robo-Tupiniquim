@@ -14,8 +14,8 @@ namespace Robo_Tupiniquim
         string[] TamanhoGrid = Console.ReadLine()!.Split(' ');
          xMax = int.Parse(TamanhoGrid[0]);
          yMax = int.Parse(TamanhoGrid[1]);
-
-        while (true)
+            int Robos = 0;
+        while (Robos < 2)
         {
             Console.WriteLine("Escreva a posição Inicial do Robo\nUtilize um espaco para separar (X, Y e a Direção em que ele esta olhando)");
             string posicaoInicial = Console.ReadLine()!;
@@ -45,9 +45,15 @@ namespace Robo_Tupiniquim
                     Mover();
                 }
             }
-             
-                    Console.WriteLine($"{x} {y} {direcao}");
+                if (x > xMax || y > yMax || x < 0 || y < 0)
+                    Console.WriteLine("Voce digitou coordenadas invalidas");
+
+                else
+                {
+                    Console.WriteLine($"{x} {y} {direcao}\nAperte ENTER para digitar as coordenadas do segundo ROBO");
                     Console.ReadLine();
+                    Robos++;
+                }
                 
         }
           
