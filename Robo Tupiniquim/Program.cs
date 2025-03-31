@@ -10,14 +10,14 @@ namespace Robo_Tupiniquim
         static int yMax;
         public static void Main(string[] args)
     {
-        Console.WriteLine("Escreva o tamanho do grid\nTamanho Maximo: 9|9");
+        Console.WriteLine("Escreva o tamanho do grid\nUtilize um espaço para separar X e Y\nTamanho Maximo: 9|9");
         string[] TamanhoGrid = Console.ReadLine()!.Split(' ');
          xMax = int.Parse(TamanhoGrid[0]);
          yMax = int.Parse(TamanhoGrid[1]);
 
         while (true)
         {
-            Console.WriteLine("Escreva a posição Inicial do Robo");
+            Console.WriteLine("Escreva a posição Inicial do Robo\nUtilize um espaco para separar X Y e a Direção em que el esta olhando");
             string posicaoInicial = Console.ReadLine()!;
 
             Console.WriteLine("Escreva os Comandos do Robo!");
