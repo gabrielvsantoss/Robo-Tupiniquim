@@ -6,6 +6,13 @@
 ## Resumindo o Projeto
 - Neste projeto da academia do programador realizei a construção de um sistema que recebe tres entradas (Tamanho do Grid, Posição Inicial, Movimentos) recebendo essas informações o programa utiliza os movimentos para mexer o robo e alterar a posição.
 
+## Conhecimentos Utilizados
+- Uso de issues do GitHub
+- Uso dos commits
+- Uso de Foreach
+- Uso de Switch Case
+- Uso de funções (Programaçaõ Estruturada)
+- Uso de Excel para compreensão e formulação do projeto
 
 ## Funcionalidades
 - **Alteração de Altura e Comprimento:** Consegue identificar a altura e o comprimento e altera-los conforme os movimentos que o robo realizou.
