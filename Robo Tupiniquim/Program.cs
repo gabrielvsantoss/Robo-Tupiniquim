@@ -10,11 +10,13 @@ namespace Robo_Tupiniquim
         static int yMax;
         public static void Main(string[] args)
     {
-        Console.WriteLine("Escreva o tamanho do grid\nUtilize um espaço para separar X e Y\nTamanho Maximo: 9|9");
+        Console.WriteLine("Escreva o tamanho do grid\nUtilize um espaço para separar X e Y");
         string[] TamanhoGrid = Console.ReadLine()!.Split(' ');
+
          xMax = int.Parse(TamanhoGrid[0]);
          yMax = int.Parse(TamanhoGrid[1]);
-            int Robos = 0;
+
+        int Robos = 0;
         while (Robos < 2)
         {
             Console.WriteLine("Escreva a posição Inicial do Robo\nUtilize um espaco para separar (X, Y e a Direção em que ele esta olhando)");
@@ -52,7 +54,7 @@ namespace Robo_Tupiniquim
                 {
                     Console.WriteLine($"{x} {y} {direcao}\nAperte ENTER para digitar as coordenadas do segundo ROBO");
                     Console.ReadLine();
-                    Robos++;
+                    Robos ++;
                 }
                 
         }

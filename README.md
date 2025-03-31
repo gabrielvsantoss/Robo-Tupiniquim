@@ -14,5 +14,3 @@
 - **Percepção de tamanho do Grid**: Idendifica se os movimentos digitados deixam o robo dentro do GRID proposto pelo proprio usuario.
 
 
-## Como usar?
-
