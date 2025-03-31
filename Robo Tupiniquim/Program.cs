@@ -1,17 +1,19 @@
-﻿namespace Robo_Tupiniquim
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
+﻿
 
-            string[] limites = Console.ReadLine().Split(' ');
+public class NavegacaoRobo
+{
+    public static void Main(string[] args)
+    {
+
+        {
+            string[] limites = Console.ReadLine()!.Split(' ');
             int xMax = int.Parse(limites[0]);
             int yMax = int.Parse(limites[1]);
 
+            List<string> resultados = new List<string>();
             while (true)
             {
-                string posicaoInicial = Console.ReadLine();
+                string posicaoInicial = Console.ReadLine()!;
                 if (string.IsNullOrEmpty(posicaoInicial)) break;
                 string comandos = Console.ReadLine();
 
@@ -35,10 +37,15 @@
                         Mover(ref x, ref y, direcao, xMax, yMax);
                     }
                 }
-                Console.WriteLine($"{x} {y} {direcao}");
+                resultados.Add($"{x} {y} {direcao}");
+            }
+
+            foreach (string resultado in resultados)
+            {
+                Console.WriteLine(resultado);
             }
         }
 
-       
+
     }
 }
