@@ -3,12 +3,17 @@ namespace Robo_Tupiniquim
 {
     internal class Program
     {
+        static int x;
+        static int y;
+        static char direcao;
+        static int xMax;
+        static int yMax;
         public static void Main(string[] args)
     {
         Console.WriteLine("Escreva o tamanho do grid\n Tamanho Maximo: 9|9");
-        string[] limites = Console.ReadLine()!.Split(' ');
-        int xMax = int.Parse(limites[0]);
-        int yMax = int.Parse(limites[1]);
+        string[] TamanhoGrid = Console.ReadLine()!.Split(' ');
+         xMax = int.Parse(TamanhoGrid[0]);
+         yMax = int.Parse(TamanhoGrid[1]);
 
         while (true)
         {
@@ -18,23 +23,25 @@ namespace Robo_Tupiniquim
             string comandos = Console.ReadLine()!;
 
             string[] posicao = posicaoInicial.Split(' ');
-            int x = int.Parse(posicao[0]);
-            int y = int.Parse(posicao[1]);
-            char direcao = char.Parse(posicao[2]);
+            
+  
+             x = int.Parse(posicao[0]);
+             y = int.Parse(posicao[1]);
+             direcao = char.Parse(posicao[2]);
 
             foreach (char comando in comandos)
             {
                 if (comando == 'E')
                 {
-                    direcao = VirarEsquerda(direcao);
+                    direcao = VirarEsquerda();
                 }
                 else if (comando == 'D')
                 {
-                    direcao = VirarDireita(direcao);
+                    direcao = VirarDireita();
                 }
                 else if (comando == 'M')
                 {
-                    Mover( x,  y, direcao, xMax, yMax);
+                    Mover();
                 }
             }
              
@@ -45,7 +52,7 @@ namespace Robo_Tupiniquim
           
         }
 
-    public static char VirarEsquerda(char direcao)
+    public static char VirarEsquerda()
     {
         switch (direcao)
         {
@@ -57,7 +64,7 @@ namespace Robo_Tupiniquim
         }
     }
 
-    public static char VirarDireita(char direcao)
+    public static char VirarDireita()
     {
         switch (direcao)
         {
@@ -69,7 +76,7 @@ namespace Robo_Tupiniquim
         }
     }
 
-        public static void Mover(int x,  int y, char direcao, int xMax, int yMax)
+        public static void Mover()
         {
             switch (direcao)
             {
