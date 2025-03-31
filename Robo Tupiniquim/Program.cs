@@ -17,7 +17,7 @@ namespace Robo_Tupiniquim
 
         while (true)
         {
-            Console.WriteLine("Escreva a posição Inicial do Robo\nUtilize um espaco para separar X Y e a Direção em que el esta olhando");
+            Console.WriteLine("Escreva a posição Inicial do Robo\nUtilize um espaco para separar (X, Y e a Direção em que ele esta olhando)");
             string posicaoInicial = Console.ReadLine()!;
 
             Console.WriteLine("Escreva os Comandos do Robo!");
