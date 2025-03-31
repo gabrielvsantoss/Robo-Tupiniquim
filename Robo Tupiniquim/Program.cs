@@ -31,13 +31,16 @@ namespace Robo_Tupiniquim
                 }
                 else if (comando == 'M')
                 {
-                    Mover(ref x, ref y, direcao, xMax, yMax);
+                    Mover( x,  y, direcao, xMax, yMax);
                 }
             }
-            Console.WriteLine($"{x} {y} {direcao}");
-            Console.ReadLine();
+             
+                    Console.WriteLine($"{x} {y} {direcao}");
+                    Console.ReadLine();
+                
         }
-    }
+          
+        }
 
     public static char VirarEsquerda(char direcao)
     {
@@ -63,4 +66,16 @@ namespace Robo_Tupiniquim
         }
     }
 
-}}
+        public static void Mover(int x,  int y, char direcao, int xMax, int yMax)
+        {
+            switch (direcao)
+            {
+                case 'N': y++; break;
+                case 'S': y--; break;
+                case 'L': x++; break;
+                case 'O': x--; break;
+            }
+        }
+
+    }
+}
