@@ -3,98 +3,75 @@ namespace Robo_Tupiniquim
 {
     internal class Program
     {
-        static int x;
-        static int y;
-        static char direcao;
+        
         static int xMax;
         static int yMax;
         public static void Main(string[] args)
-    {
-        Console.WriteLine("Escreva o tamanho do grid\nUtilize um espaço para separar X e Y");
-        string[] TamanhoGrid = Console.ReadLine()!.Split(' ');
-
-         xMax = int.Parse(TamanhoGrid[0]);
-         yMax = int.Parse(TamanhoGrid[1]);
-
-        int Robos = 0;
-        while (Robos < 2)
         {
-            Console.WriteLine("Escreva a posição Inicial do Robo\nUtilize um espaco para separar (X, Y e a Direção em que ele esta olhando)");
+           
+               
+
+                
+
+                Console.WriteLine("Escreva o tamanho do grid\nUtilize um espaço para separar X e Y");
+            string[] TamanhoGrid = Console.ReadLine()!.Split(' ');
+
+            xMax = int.Parse(TamanhoGrid[0]);
+            yMax = int.Parse(TamanhoGrid[1]);
+
+            Robo[] robos = new Robo[2];
+            for (int i = 0; i < 2; i++)
+            {
+                Robo robo = new Robo();
+                Console.WriteLine("Escreva a posição Inicial do Robo\nUtilize um espaco para separar (X, Y e a Direção em que ele esta olhando)");
             string posicaoInicial = Console.ReadLine()!;
 
             Console.WriteLine("Escreva os Comandos do Robo!");
             string comandos = Console.ReadLine()!;
 
             string[] posicao = posicaoInicial.Split(' ');
-            
-  
-             x = int.Parse(posicao[0]);
-             y = int.Parse(posicao[1]);
-             direcao = char.Parse(posicao[2]);
 
-            foreach (char comando in comandos)
-            {
-                if (comando == 'E')
+           
+           
+
+                robo.x = int.Parse(posicao[0]);
+                robo.y = int.Parse(posicao[1]);
+                robo.direcao = char.Parse(posicao[2]);
+
+                foreach (char comando in comandos)
                 {
-                    direcao = VirarEsquerda();
+                    if (comando == 'E')
+                    {
+                        robo.direcao = robo.VirarEsquerda();
+                    }
+                    else if (comando == 'D')
+                    {
+                        robo.direcao = robo.VirarDireita();
+                    }
+                    else if (comando == 'M')
+                    {
+                        robo.Mover();
+
+                    }
                 }
-                else if (comando == 'D')
-                {
-                    direcao = VirarDireita();
-                }
-                else if (comando == 'M')
-                {
-                    Mover();
-                }
-            }
-                if (x > xMax || y > yMax || x < 0 || y < 0)
+                if (robo.x > xMax || robo.y > yMax || robo.x < 0 || robo.y < 0)
                     Console.WriteLine("Voce digitou coordenadas invalidas");
 
                 else
                 {
-                    Console.WriteLine($"{x} {y} {direcao}\nAperte ENTER para digitar as coordenadas do segundo ROBO");
-                    Console.ReadLine();
-                    Robos ++;
+                    robos[i] = robo;
+
                 }
-                
-        }
+            }
+
+            Console.WriteLine($"{robos[0].x} {robos[0].y} {robos[0].direcao}");
+            Console.WriteLine($"{robos[1].x} {robos[1].y} {robos[1].direcao}");
+
+            Console.ReadLine();
           
         }
 
-    public static char VirarEsquerda()
-    {
-        switch (direcao)
-        {
-            case 'N': return 'O';
-            case 'O': return 'S';
-            case 'S': return 'L';
-            case 'L': return 'N';
-            default: return direcao;
-        }
-    }
 
-    public static char VirarDireita()
-    {
-        switch (direcao)
-        {
-            case 'N': return 'L';
-            case 'L': return 'S';
-            case 'S': return 'O';
-            case 'O': return 'N';
-            default: return direcao;
-        }
-    }
-
-        public static void Mover()
-        {
-            switch (direcao)
-            {
-                case 'N': y++; break;
-                case 'S': y--; break;
-                case 'L': x++; break;
-                case 'O': x--; break;
-            }
-        }
 
     }
 }
